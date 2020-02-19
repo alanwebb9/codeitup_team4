@@ -13,11 +13,11 @@ import com.jj.health.model.Activity;
 @Repository
 public interface SearchRepository extends JpaRepository<Activity,Integer> {
 	
-	@Query(value="SELECT d FROM data d",nativeQuery=true)
+	@Query(value="SELECT * FROM data d",nativeQuery=true)
 	List<Activity> findAllRecord();
 	
 	
-	@Query(value="SELECT d FROM data d where d.fid=:fid",nativeQuery=true)
+	@Query(value="SELECT * FROM data d where d.fid=:fid",nativeQuery=true)
 	Activity findActivityRecord(@Param("fid") int fid);
 
 }
