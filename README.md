@@ -23,6 +23,8 @@ We are designing an application which can provide the nearest outdoor activities
 
 ## Deployment pipeline 
 
+![Image description](img/jenkins.png)
+
 * Jenkins : http://34.219.71.158:8080/job/Deploy/ 
 * Deployment on AWS Using RDS and EC2
 * Backend available at : http://34.219.71.158:5000/api/
