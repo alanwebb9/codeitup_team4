@@ -30,7 +30,7 @@
   </div>
       </div>
       <div class="form-group" style="text-align: right;">
-      <button type="submit" style="margin-right: 10px;" class="btn btn-primary">Submit</button>
+      <button type="submit" style="margin-right: 10px;" class="btn btn-primary" data-bind="click: Loginuser">Submit</button>
     </div>
     </div>
 
@@ -41,7 +41,7 @@
     <div class="row"><div class="col-xl-11"><div class="row" >
       <input id="txtsearch" type="text" class="form-control" style="max-width:99%"></div></div>
 <div class="col-xl-1"><div class="row">
-  <button type="button" class="btn btn-primary" style="width:150px">Search</button>
+  <button type="button" class="btn btn-primary"  data-bind="click: searchactivities" style="width:150px">Search</button>
 </div></div>
 </div>
 </div>
@@ -49,10 +49,21 @@
 
 <p id="demo"></p>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>item 1</h3>
-      <p>item description</p>
+  <div class="row" >
+    <div class="col-sm-4" data-bind="foreach: Activityitem">
+      <table>
+        <tr>
+          <td>Name</td>
+          <td  data-bind="text: name"></td>
+        </tr>
+        <tr>
+          <td>Destination</td>
+          <td  data-bind="text: des"></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td  data-bind="text: email"></td>
+        </tr>
     </div>
     <div class="col-sm-4" style="visibility: hidden">
       <div class="spinner-border text-primary"></div>
