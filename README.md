@@ -15,16 +15,25 @@ We are designing an application which can provide the nearest outdoor activities
 * Suggestion of the nearest outdoor activity available to user
 * Ability to track the workout
 
+# Steps taken
+
+* Database / Tables created 
+* CSV dataset loaded to Mysql database with script deployment/import.sh
+* User table intialized for register/login
+* Worked on Backend 
+* Worked on Frontend 
+
 ## Technology pipeline
 
 * Spring bootframework
-* Mysql DB 
+* Mysql DB  
 * HTML/CSS + bootstrap + Knockoutjs
+* Cloud AWS RDS/EC2
 
 ## Deployment pipeline 
 
 ![Image description](img/jenkins.png)
 
 * Jenkins : http://34.219.71.158:8080/job/Deploy/ 
-* Deployment on AWS Using RDS and EC2
+* Deployment to AWS
 * Backend available at : http://34.219.71.158:5000/api/
