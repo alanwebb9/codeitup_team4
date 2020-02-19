@@ -8,20 +8,21 @@ We are designing an application which can provide the nearest outdoor activities
 * https://data.gov.ie/dataset/outdoor-exercise-equipment
 * https://data.gov.ie/dataset/play-areas
 
-## Features: 
 
-* Sign up
-* User login 
-* Suggestion of the nearest outdoor activity available to user
-* Ability to track the workout
-
-# Steps taken
+## Steps taken
 
 * Database / Tables created 
 * CSV dataset loaded to Mysql database with script deployment/import.sh
 * User table intialized for register/login
 * Worked on Backend 
 * Worked on Frontend 
+
+## Features: 
+
+* Sign up
+* User login 
+* Suggestion of the nearest outdoor activity available to user
+* Ability to track the workout
 
 ## Technology pipeline
 
