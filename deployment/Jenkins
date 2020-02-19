@@ -1,0 +1,21 @@
+pipeline {
+   agent any
+
+stages {
+    stage('Clone sources') {
+        steps {
+        git branch: "master" , credentialsId: 'f64177c2-b51e-4c33-b815-3f491b779d9c', url: 'https://github.com/alanwebb9/codeitup_team4.git'
+        }
+    }
+    stage('Stage build') {
+        steps {
+        sh "mvn package -f health/pom.xml -DskipTests=true"
+        }
+    }
+    stage('Stage run') {
+        steps {
+        sh "java -jar health/target/health-0.0.1-SNAPSHOT.jar "
+    }
+    }
+}
+}
