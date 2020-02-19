@@ -1,13 +1,23 @@
 package com.jj.health.service;
-/*package com.jj.health.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.jj.health.model.Activity;
+import com.jj.health.repository.SearchRepository;
 
-public class Specific_Activity_Impl implements Specific_Activity{
+@Service
+public class SpecificActivityImpl implements SpecificActivity{
 	
-	public Activity specific_Activity(int fid)
+	@Autowired
+	private SearchRepository searchRepository;
+
+	
+	public Activity specificActivity(int fid)
 	{
+		Activity activityObject=searchRepository.findActivityRecord(fid);
+		return activityObject;
 		
 	}
 	
-}*/
+}

@@ -1,33 +1,29 @@
 package com.jj.health.controller;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-/*import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jj.health.model.Activity;
-import com.jj.health.view.Search_Form_UI;
-import com.jj.health.view.Search_Result;
-@CrossOrigin(origins = "http://localhost:4200")
+import com.jj.health.service.*;
+@CrossOrigin(origins = "http://localhost:5000")
 @RestController
-@RequestMapping("/api/details")
+@RequestMapping("/api")
 public class SpecificActivityController {
 	
 	@Autowired
 	private SpecificActivity specificActivity;
 	
-	@PostMapping("/area_search/{fid}")
-	public ResponseEntity<?> food_search(@PathVariable int fid)
+	@PostMapping("/AreaSearch/{fid}")
+	public ResponseEntity<?> activitySearch(@PathVariable int fid)
 	{
 		try
 		{
-			int data=10;
-			Activity activity_model=specificActivity.specific_Activity(data);
+			Activity activity_model=specificActivity.specificActivity(fid);
 			
 			return ResponseEntity.status(200).body(activity_model);
 		}
@@ -37,4 +33,4 @@ public class SpecificActivityController {
 		}
 	}
 }
-*/
+
