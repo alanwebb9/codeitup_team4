@@ -1,5 +1,4 @@
 package com.jj.health.controller;
-import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,30 +9,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jj.health.service.Search_Service;
-import com.jj.health.view.Search_Form_UI;
-import com.jj.health.view.Search_Result;
-
+import com.jj.health.service.LogActivity;
+import com.jj.health.view.ActivityForm;
 @CrossOrigin(origins = "http://localhost:5000")
 @RestController
 @RequestMapping("/api")
-public class Search_Controller {
+public class LogActivityController{
 	
 	@Autowired
-	private Search_Service searchService;
+	private LogActivity logActivity;
 	
-	@PostMapping("/AreaSearch")
-	public ResponseEntity<?> food_search(@RequestBody Search_Form_UI search_form_ui)
+	@PostMapping("/LogActivity")
+	public ResponseEntity<?> food_search(@RequestBody ActivityForm activityForm)
 	{
 		try
 		{
-			List<Search_Result> search_form=searchService.Search_Result_Location(search_form_ui);
-			return ResponseEntity.status(200).body(search_form);
+			String result=logActivity.storeActivity(activityForm);
+			return ResponseEntity.status(200).body(result);
 		}
 		catch(Exception e)
 		{
 			return ResponseEntity.status(500).body(e.getMessage());
 		}
 	}
+	
 }
-
